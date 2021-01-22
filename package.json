@@ -1,0 +1,22 @@
+{
+  "name": "formulario-login",
+  "version": "1.0.0",
+  "description": "Criando um formulário de login responsivo com HTML e CSS - inspirado no vídeo: https://www.youtube.com/watch?v=MkXuQ9CcHqU&ab_channel=GirlCoding",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HugoLeda/formulario-login.git"
+  },
+  "author": "João Hugo Leda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HugoLeda/formulario-login/issues"
+  },
+  "homepage": "https://github.com/HugoLeda/formulario-login#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

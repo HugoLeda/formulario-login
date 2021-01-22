@@ -11,7 +11,7 @@ body {
     background: linear-gradient(45deg, rgb(0, 255, 255), rgb(0, 165, 165));
     background-repeat: no-repeat;
     min-height: 100vh;
-    min-width: 100vh;
+    min-width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -19,11 +19,12 @@ body {
 
 main.container {
     background: white;
-    max-width: 350px;
+    max-width: 400px;
     min-width: 40vh;
     padding: 2rem;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
+    width: 20%;
 }
 
 main h2 {
