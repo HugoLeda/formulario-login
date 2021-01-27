@@ -9,8 +9,8 @@ const app = express()
 app.use('/css', express.static('css'))
 
 app.get('/', (req, res) => {
-    let a = cruds.checkEmail('parametro')
-    console.log(a)
+    let results = cruds.checkEmail('valorpassado')
+    console.log(results)
     res.sendFile(__dirname + '/view/index.html')
 })
 
