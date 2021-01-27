@@ -10,8 +10,10 @@ CREATE TABLE `login`.`users` (
 )
 
 SELECT * FROM login.users;
+
 /*DROP TABLE LOGIN.USERS;*/
+
 INSERT INTO `login`.`users`
-(nome, email, d_nasc, sexo, celular)
+(nome, email, senha, d_nasc, sexo, celular)
 VALUES
-('teste', 'teste@teste', '20030816', 'M', '(14) 99794-5574');
+('teste', 'teste@teste', 'teste', '20030816', 'M', '(14) 99794-5574');
