@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
         console.log('error:', error); // Print the error if one occurred
         console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
         var parsedWeather = JSON.parse(body);
-        console.log('A temperatura atual em São Paulo é ' + parsedWeather['main']['temp']); // Print the Temperature in the city of São Paulo
+        /*console.log('A temperatura atual em São Paulo é ' + parsedWeather['main']['temp']); // Print the Temperature in the city of São Paulo*/
     });
 })
 
