@@ -1,8 +1,10 @@
 const { static } = require('express')
 const express = require('express')
-const encodeParser = require('')
+const bodyParser = require('body-parser')
+const urlencodeParser = bodyParser.urlencoded({ extended: false })
 
 const crud = require('crud')
+const { urlencoded } = require('body-parser')
 const cruds = new crud()
 
 const app = express()
@@ -14,8 +16,9 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/view/index.html')        
 })
 
-app.post('/home', (req, res) => {
+app.post('/home', urlencodeParser, (req, res) => {
     res.send('<h1>Olá Mundo</h1>')
+    console.log(req.params[0])
 })
 
 app.listen(5050, () => {
