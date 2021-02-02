@@ -1,5 +1,6 @@
 const { static } = require('express')
 const express = require('express')
+const encodeParser = require('')
 
 const crud = require('crud')
 const cruds = new crud()
@@ -14,7 +15,7 @@ app.get('/', (req, res) => {
 })
 
 app.post('/home', (req, res) => {
-    '<h1>Olá Mundo</h1>'
+    res.send('<h1>Olá Mundo</h1>')
 })
 
 app.listen(5050, () => {
