@@ -9,9 +9,12 @@ const app = express()
 app.use('/css', express.static('css'))
 
 app.get('/', (req, res) => {    
-    let results = cruds.verificaLogin()
-    console.log(results)
+    let results = cruds.verificaLogin()    
     res.sendFile(__dirname + '/view/index.html')        
+})
+
+app.post('/home', (req, res) => {
+    '<h1>Olá Mundo</h1>'
 })
 
 app.listen(5050, () => {
