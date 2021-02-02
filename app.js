@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
 
 app.post('/home', urlencodeParser, (req, res) => {
     res.send('<h1>Olá Mundo</h1>')
-    console.log(req.params[0])
+    console.log(req)
 })
 
 app.listen(5050, () => {
