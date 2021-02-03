@@ -11,16 +11,14 @@ const app = express()
 
 app.use('/css', express.static('css'))
 
-app.get('/', (req, res) => {    
-    let results = cruds.verificaLogin()    
+app.get('/', (req, res) => {       
     res.sendFile(__dirname + '/view/index.html')        
 })
 
 app.post('/home', urlencodeParser, (req, res) => {
+    var resLogin = cruds.verificaLogin(req.body.username, req.body.password)
     res.send('<h1>Olá Mundo</h1>')
-    console.log(req)
+    console.log(resLogin)
 })
 
-app.listen(5050, () => {
-    console.log('Server started at https://localhost5050')
-})
+app.listen(5050, () => {    console.log('Server started at https://localhost5050')      })
