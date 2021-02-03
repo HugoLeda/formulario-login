@@ -1,7 +1,15 @@
-const { static } = require('express')
 const express = require('express')
 const bodyParser = require('body-parser')
 const urlencodeParser = bodyParser.urlencoded({ extended: false })
+const mysql = require('mysql')
+
+const bd = mysql.createConnection({
+    host        : 'localhost',
+    user        : 'curso',    
+    database    : 'login',
+    password    : '040303',
+    port        : '3306'
+})
 
 const crud = require('crud')
 const { urlencoded } = require('body-parser')
@@ -15,10 +23,27 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/view/index.html')        
 })
 
-app.post('/home', urlencodeParser, (req, res) => {
-    var resLogin = cruds.verificaLogin(req.body.username, req.body.password)
-    res.send('<h1>Olá Mundo</h1>')
+function veriLogin(email, password) {
+    var resLogin = cruds.verificaLogin(email, password) 
+    return resLogin       
+}
+
+app.post('/home', urlencodeParser, (req, res) => { 
+    var res = new Boolean(0)       
+        bd.query(`SELECT COUNT(*) login [login] FROM users where email = ${req.body.username} and senha = ${req.body.password}`, function(erro, results, fields){            
+            if (!erro) {
+                if (results["login"] == 1) {
+                    console.log('aaa')    
+                }
+            }                
+            console.log(res)    
+            return res    
+        })
+    /*
+    var resLogin = veriLogin(req.body.username, req.body.password)      
     console.log(resLogin)
+    res.send('<h1>Olá Mundo</h1>')    
+    */
 })
 
 app.listen(5050, () => {    console.log('Server started at https://localhost5050')      })
