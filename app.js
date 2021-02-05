@@ -29,21 +29,9 @@ function veriLogin(email, password) {
 }
 
 app.post('/home', urlencodeParser, (req, res) => { 
-    var res = new Boolean(0)       
-        bd.query(`SELECT COUNT(*) login [login] FROM users where email = ${req.body.username} and senha = ${req.body.password}`, function(erro, results, fields){            
-            if (!erro) {
-                if (results["login"] == 1) {
-                    console.log('aaa')    
-                }
-            }                
-            console.log(res)    
-            return res    
-        })
-    /*
     var resLogin = veriLogin(req.body.username, req.body.password)      
     console.log(resLogin)
     res.send('<h1>Olá Mundo</h1>')    
-    */
 })
 
 app.listen(5050, () => {    console.log('Server started at https://localhost5050')      })
